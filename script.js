@@ -29,6 +29,12 @@ function getAverage(scores) {
   }
   
   function studentMsg(totalScores, studentScore) {
-  
+       if(getGrade(studentScore) !== "F"){
+        return ("Average Score: "+getAverage(totalScores)+". Your grade: "+getGrade(studentScore)+". You passed the Course.");
+       }  else {
+            return ("Average Score: "+getAverage(totalScores)+". Your grade: "+getGrade(studentScore)+". You failed the Course.");
+
+       }
   }
-  console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 37));
+  console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 67));
+  console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 34));
